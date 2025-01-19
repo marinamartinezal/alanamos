@@ -65,7 +65,7 @@ section.barraIzq button {
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
-    z-index: 4;
+    z-index: 5;
 }
 
 
@@ -253,6 +253,35 @@ img.gallery{
     object-fit: contain;
 }
 
+div.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(36, 55, 137,0.7);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    position: relative;
+}
+#large-image {
+    max-width:85vw;
+    max-height: 85vh;
+    height: auto;
+    object-fit: contain;
+}
+
+
 
 
 /*footer*/
@@ -272,6 +301,27 @@ footer{
     font-family: 'Times New Roman', Times, serif;
     position: fixed;
     bottom:0
+}
+
+/* A N I M A C I O N*/
+
+@keyframes movimiento{
+    0%,100%{
+        top:0;
+        left:0;
+    }
+    25%{
+        bottom:0;
+        left: 0;
+    }
+    50%{
+        bottom: 0;
+        right: 0;
+    }
+    75%{
+        top:0;
+        right:0;
+    }
 }
 
 /* R E S P O N S I V E */
@@ -380,12 +430,28 @@ footer{
         height: 6%;
         overflow-x: hidden;
     }
+    /*ABOUT*/
+   
+    img.about{
+        width:400px;
+        height: fit-content;
+        margin: 25px 0 0 50px;
+    
+    }
+    section.about article{
+        margin: 50px;
+        width: 400px;
+        
+    }
+    section.about p{ 
+        margin-top: 2px;
+    }
 }
 
 
 @media screen and (max-width:900px){
     h1{
-        translate: -104px 78px;
+        translate: -104px 108px;
         width:250px;
         font-size: 1em;
     }
@@ -396,43 +462,63 @@ footer{
 
     /*HOMEPAGE*/
     /*dreams are made of chrome*/
-    section.dreams{
-        font-size: 2.3em;
-        width: 100%;
-    }
-    .contenedor-central {
-        height: 100%;
-    }
-    div.contenedorCirculos{
-        width: 400px;
-        height: 330px;
-    }
-    span.circulo{
-        width: 44px;
-        height: 44px;
-        border-radius: 50%; 
-        position: absolute;
-    }
-    span.circulo.azul{
-        translate: 16px 1px;
-        
-    }
-    span.dreamsAre{
-        translate: 40px;
-    }
-    span.madeOf{
-        translate: -19px;
-    }
-    span.chrome{
-        translate: 250px;
-    }
+        section.dreams{
+            font-size: 2.3em;
+            width: 100%;
+        }
+        .contenedor-central {
+            height: 100%;
+        }
+        div.contenedorCirculos{
+            width: 400px;
+            height: 330px;
+        }
+        span.circulo{
+            width: 44px;
+            height: 44px;
+            border-radius: 50%; 
+            position: absolute;
+        }
+        span.circulo.azul{
+            translate: 16px 1px;
+            
+        }
+        span.dreamsAre{
+            translate: 40px;
+        }
+        span.madeOf{
+            translate: -19px;
+        }
+        span.chrome{
+            translate: 250px;
+        }
 
-    footer{
-        font-size: 1em;
-        width: 100%;
-        height: 6%;
-        overflow-x: hidden;
-    }
+        footer{
+            font-size: 0.9em;
+            width: 100%;
+            height: 6%;
+            overflow-x: hidden;
+        }
+
+
+    /*ABOUT*/
+        section.about{
+            font-size: 1em;
+        }
+        img.about{
+            width:300px;
+            height: fit-content;
+            margin: 25px 0 0 50px;
+        
+        }
+        section.about article{
+            margin: 30px;
+            width: 300px;
+            
+        }
+        section.about p{ 
+            margin-top: 2px;
+        }
 }
 
 /*version tablet*/
@@ -511,35 +597,72 @@ footer{
 
     /*HOMEPAGE*/
     /*dreams are made of chrome*/
-    section.dreams{
-        font-size: 1.4em;
-        width: 100%;
-    }
-    .contenedor-central {
-        height: 100%;
-    }
-    div.contenedorCirculos{
-    width: 300px;
-    height: 270px;
-    }
-    span.circulo{
-        width: 33px;
-        height: 33px;
-        border-radius: 50%; 
-        position: absolute;
-    }
-    span.circulo.azul{
-        translate: 10px 4px;   
-    }
-    span.dreamsAre{
-        translate: 27px;
-    }
-    span.madeOf{
-        translate: -13px;
-    }
-    span.chrome{
-        translate: 153px;
-    }
+        section.dreams{
+            font-size: 1.4em;
+            width: 100%;
+        }
+        .contenedor-central {
+            height: 100%;
+        }
+        div.contenedorCirculos{
+        width: 300px;
+        height: 270px;
+        }
+        span.circulo{
+            width: 33px;
+            height: 33px;
+            border-radius: 50%; 
+            position: absolute;
+        }
+        span.circulo.azul{
+            translate: 10px 4px;   
+        }
+        span.dreamsAre{
+            translate: 27px;
+        }
+        span.madeOf{
+            translate: -13px;
+        }
+        span.chrome{
+            translate: 153px;
+        }
+
+
+    /*ABOUT*/
+        section.about{
+            grid-column: 2/3;
+            grid-row: 1/3; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow-y:scroll;
+            margin: 0;
+            padding-top: 20px;
+            height: auto;
+            position: relative;
+        }
+        img.about{
+            width:300px;
+            height: auto;
+            margin: 20px;
+            padding: 0px;
+            position: absolute;
+            top:0;
+        }
+        section.about article{
+            position: absolute;
+            top:435px;
+            width:300px;
+            color:rgb(36, 55, 137);
+            text-align: justify;
+            font-size: 0.9em;
+            margin: 0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+
 }
 
 /*version movil*/
@@ -577,4 +700,30 @@ footer{
         translate: 124px;
     }
 
+    /*GALLERY*/
+        section.gallery{
+            grid-column: 2/3;
+            grid-row: 2/3; 
+            display: flex;
+            gap:20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            background-color: transparent;
+        }
+        div.gallery{
+            width:300px;
+            height: 300px;
+            border:1px solid rgb(36, 55, 137) ;
+            object-fit: contain;
+            
+        }
+        img.gallery{
+            width:300px;
+            height: 300px;
+            object-fit: contain;
+        }
 }

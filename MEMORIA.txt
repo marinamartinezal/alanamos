@@ -1,0 +1,16 @@
+Alan Amos
+
+Se trata de una web personal a modo de portfolio para diferentes tipos de trabajos de diseño grafico, graffiti, etc. Se podría decir que es un baúl con varios tipos de creaciones ya que no necesariamente van dirigidas a buscar un trabajo. En mi opinión podría ser un intermedio entre un blog personal y un portfolio.
+Al tratarse de una web de carácter creativo, se tiene en cuenta el estilo del propio diseñador para que esta se adapte bien con su creaciones y funcione como una extensión de el mismo.
+
+url: https://alan-amos.netlify.app/
+
+Las tipografías utilizadas son:
+Druk Wide Medium y Times new roman.
+
+Colores RGB:
+255,255,255
+36, 55, 137
+32, 132, 66
+232, 59, 73
+248, 232, 6
