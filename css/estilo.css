@@ -253,8 +253,8 @@ img.gallery{
     object-fit: contain;
 }
 
-div.gallery img:hover {
-    transform: scale(1.05);
+div.gallery:hover {
+    border:1px solid white;
 }
 
 /* Estilo para el overlay */
